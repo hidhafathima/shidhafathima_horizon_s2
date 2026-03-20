@@ -1,0 +1,26 @@
+#partA
+import math
+# Input coordinates
+x1=float(input("Enter x1: "))
+y1=float(input("Enter y1: "))
+x2=float(input("Enter x2: "))
+y2=float(input("Enter y2: "))
+distance=math.sqrt((x2-x1)**2 + (y2-y1)**2)
+print("Distance the rover must travel:",round(distance,2),"m")
+
+#partB
+u=float(input("Enter initial velocity: "))
+a=float(input("Enter the acceleration: "))
+v_max=float(input("Enter the maximum speed: "))
+t=(distance/v_max) #assumed that constant max speed for simplicity
+
+#partC Error handling
+try:
+     x1=float(input("Enter x1: "))
+     y1=float(input("Enter y1: "))
+     x2=float(input("Enter x2: "))
+     y2=float(input("Enter y2: "))
+     u=float(input("Enter initial velocity: "))
+     a=float(input("Enter the acceleration: "))
+except:
+     print("Invalid inputs!Please enter numbers only.")
