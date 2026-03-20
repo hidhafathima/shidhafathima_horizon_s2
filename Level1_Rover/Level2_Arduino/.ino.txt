@@ -1,0 +1,26 @@
+// C++ code
+//
+#include <Servo.h>
+Servo myServo;
+int potPin=A0;
+int ledPin=7;
+void setup()
+{
+  myServo.attach(9);//servo connected to pin 9
+  pinMode(ledPin,OUTPUT);
+}
+void loop()
+{
+  int value=analogRead(potPin);//read potentiometer
+  int angle=map(value,0,1023,0,180);//converts to angle
+  if (angle>68)
+  {
+    angle=68;
+    digitalWrite(ledPin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin,LOW);
+  }
+  myServo.write(angle);
+}
